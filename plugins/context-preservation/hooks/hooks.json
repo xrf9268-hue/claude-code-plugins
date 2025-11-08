@@ -1,0 +1,17 @@
+{
+  "description": "PreCompact hook that preserves important development context before conversation compaction",
+  "hooks": {
+    "PreCompact": [
+      {
+        "type": "command",
+        "command": "node ${CLAUDE_PLUGIN_ROOT}/hooks/pre-compact-handler.js"
+      }
+    ],
+    "SessionStart": [
+      {
+        "type": "command",
+        "command": "bash ${CLAUDE_PLUGIN_ROOT}/hooks/session-start.sh"
+      }
+    ]
+  }
+}

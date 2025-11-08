@@ -1,0 +1,22 @@
+{
+  "name": "context-preservation",
+  "description": "Automatically preserves important development context before Claude compacts conversation history. Saves design decisions, architecture notes, and debugging insights.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Claude Code Team",
+    "email": "support@anthropic.com"
+  },
+  "keywords": [
+    "context",
+    "preservation",
+    "precompact",
+    "hooks",
+    "session",
+    "architecture",
+    "decisions"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Joe-oss9527/claude-code"
+  }
+}
