@@ -1,0 +1,25 @@
+{
+  "name": "frontend-dev-guidelines",
+  "description": "Comprehensive frontend development guidelines for React, TypeScript, and modern web development",
+  "version": "1.0.0",
+  "author": {
+    "name": "Claude Code Team",
+    "email": "support@anthropic.com"
+  },
+  "keywords": [
+    "react",
+    "typescript",
+    "frontend",
+    "javascript",
+    "performance",
+    "accessibility",
+    "testing",
+    "components",
+    "hooks",
+    "state-management"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Joe-oss9527/claude-code"
+  }
+}
