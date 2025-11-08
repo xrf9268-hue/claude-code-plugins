@@ -4,11 +4,30 @@ This directory contains some official Claude Code plugins that extend functional
 
 ## What are Claude Code Plugins?
 
-Claude Code plugins are extensions that enhance Claude Code with custom slash commands, specialized agents, hooks, and MCP servers. Plugins can be shared across projects and teams, providing consistent tooling and workflows.
+Claude Code plugins are extensions that enhance Claude Code with custom slash commands, specialized agents, skills, hooks, and MCP servers. Plugins can be shared across projects and teams, providing consistent tooling and workflows.
+
+**Plugin capabilities**:
+- **Slash commands**: User-invoked actions (e.g., `/commit`, `/review`)
+- **Agents**: Specialized sub-agents with defined capabilities
+- **Skills**: Model-invoked tools that Claude autonomously uses based on context
+- **Hooks**: Event handlers for workflow automation
+- **MCP servers**: Integration with external tools and services
 
 Learn more in the [official plugins documentation](https://docs.claude.com/en/docs/claude-code/plugins).
 
 ## Plugins in This Directory
+
+### [doc-generator-with-skills](./doc-generator-with-skills/)
+
+**Documentation Generator Plugin with Skills Integration**
+
+Demonstrates how to integrate Skills into Claude Code plugins. Provides automated documentation generation through model-invoked skills.
+
+- **Skills**:
+  - `api-docs-generator` - Generates comprehensive API documentation from code
+  - `changelog-generator` - Creates and maintains CHANGELOG.md following Keep a Changelog format
+- **Use case**: Reference example for plugin developers wanting to integrate skills; automatic documentation generation
+- **Note**: This is a reference example showing skills integration patterns
 
 ### [agent-sdk-dev](./agent-sdk-dev/)
 
@@ -83,8 +102,26 @@ plugin-name/
 │   └── plugin.json          # Plugin metadata
 ├── commands/                 # Slash commands (optional)
 ├── agents/                   # Specialized agents (optional)
+├── skills/                   # Skills (optional)
+│   └── skill-name/
+│       └── SKILL.md         # Skill definition
+├── hooks/                    # Event hooks (optional)
 └── README.md                # Plugin documentation
 ```
+
+### Skills vs Commands
+
+- **Skills** (`skills/` directory): Model-invoked capabilities that Claude automatically uses based on context
+  - Defined in `SKILL.md` files with YAML frontmatter
+  - Activated automatically when relevant to the conversation
+  - Best for: Capabilities that should be available contextually
+
+- **Slash Commands** (`commands/` directory): User-invoked actions triggered explicitly
+  - Defined in `.md` files, invoked with `/command-name`
+  - Require explicit user action
+  - Best for: Specific workflows and operations
+
+See [doc-generator-with-skills](./doc-generator-with-skills/) for a complete skills integration example.
 
 ## Contributing
 

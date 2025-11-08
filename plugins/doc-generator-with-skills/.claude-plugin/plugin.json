@@ -1,0 +1,9 @@
+{
+  "name": "doc-generator-with-skills",
+  "description": "Documentation generation plugin demonstrating skills integration",
+  "version": "1.0.0",
+  "author": {
+    "name": "Claude Code Team",
+    "email": "support@anthropic.com"
+  }
+}
