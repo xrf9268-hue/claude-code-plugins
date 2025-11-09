@@ -24,8 +24,16 @@ Production-ready plugins that extend Claude Code with custom commands, specializ
 
 Development guides and reference materials in the [docs directory](./docs/):
 
-- **[INTEGRATING-SKILLS-IN-PLUGINS.md](./docs/INTEGRATING-SKILLS-IN-PLUGINS.md)** - Complete guide to integrating skills in plugins
+#### Quick Start
+- **[QUICK-REFERENCE.md](./docs/QUICK-REFERENCE.md)** - 📌 One-page quick reference (bookmark this!)
 - **[QUICK_PLUGIN_INSTALLATION.md](./docs/QUICK_PLUGIN_INSTALLATION.md)** - Quick start guide for plugin installation
+
+#### Component Guides
+- **[INTEGRATING-SKILLS-IN-PLUGINS.md](./docs/INTEGRATING-SKILLS-IN-PLUGINS.md)** - Complete guide to integrating skills in plugins
+- **[AGENTS-DEVELOPMENT-GUIDE.md](./docs/AGENTS-DEVELOPMENT-GUIDE.md)** - Complete guide to developing agents (sub-agents)
+- **[HOOKS-DEVELOPMENT-GUIDE.md](./docs/HOOKS-DEVELOPMENT-GUIDE.md)** - Complete guide to developing hooks
+
+#### Platform & Examples
 - **[PLATFORM_COMPATIBILITY.md](./docs/PLATFORM_COMPATIBILITY.md)** - Cross-platform development best practices
 - **Marketplace Examples** - Sample configurations for company and GitLab/Bitbucket marketplaces
 
