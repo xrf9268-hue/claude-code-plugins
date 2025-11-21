@@ -1,9 +1,23 @@
 {
   "name": "explanatory-output-style",
-  "version": "1.0.0",
   "description": "Adds educational insights about implementation choices and codebase patterns (mimics the deprecated Explanatory output style)",
+  "version": "1.0.0",
   "author": {
     "name": "Dickson Tsai",
     "email": "dickson@anthropic.com"
-  }
+  },
+  "keywords": [
+    "learning",
+    "education",
+    "explanatory",
+    "insights",
+    "output-style",
+    "teaching",
+    "hooks"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/xrf9268-hue/claude-code-plugins"
+  },
+  "license": "MIT"
 }

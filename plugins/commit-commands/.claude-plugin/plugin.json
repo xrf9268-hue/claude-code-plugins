@@ -5,6 +5,20 @@
   "author": {
     "name": "Anthropic",
     "email": "support@anthropic.com"
-  }
+  },
+  "keywords": [
+    "git",
+    "commit",
+    "workflow",
+    "commands",
+    "push",
+    "pull-request",
+    "version-control",
+    "automation"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/xrf9268-hue/claude-code-plugins"
+  },
+  "license": "MIT"
 }
-

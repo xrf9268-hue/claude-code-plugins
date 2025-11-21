@@ -1,5 +1,7 @@
 # Claude Code Extensions Library
 
+[![Validate Plugins](https://github.com/xrf9268-hue/claude-code-plugins/actions/workflows/validate-plugins.yml/badge.svg)](https://github.com/xrf9268-hue/claude-code-plugins/actions/workflows/validate-plugins.yml)
+
 A curated collection of plugins, hooks, skills, and development tools for [Claude Code](https://docs.anthropic.com/en/docs/claude-code/overview) - the agentic coding tool that helps you code faster through natural language commands.
 
 This repository is designed for developers who want to extend Claude Code's capabilities through custom extensions and share best practices for plugin development.
@@ -71,8 +73,8 @@ Use the `/plugin` command within Claude Code or configure them in your project's
   "plugins": [
     {
       "source": "github",
-      "owner": "Joe-oss9527",
-      "repo": "claude-code",
+      "owner": "xrf9268-hue",
+      "repo": "claude-code-plugins",
       "path": "plugins/commit-commands"
     }
   ]
@@ -121,6 +123,26 @@ plugin-name/
 - [Sub-Agents Guide](https://code.claude.com/docs/en/sub-agents)
 - [DevContainer Guide](https://code.claude.com/docs/en/devcontainer)
 
+## ✅ Quality Assurance
+
+This repository maintains high quality standards through:
+
+- **Automated Validation**: GitHub Actions workflow validates all plugin configurations
+- **Pre-commit Hooks**: Optional git hooks prevent invalid commits (install with `./Script/install-git-hooks.sh`)
+- **Validation Scripts**: Run `./Script/validate-all.sh` to check your changes locally
+- **Debugging Tools**: Run `./Script/debug-plugins.sh` to test plugin functionality
+- **Documentation**: Comprehensive guides for plugin development and maintenance
+
+All plugins are validated for:
+- JSON syntax and schema compliance
+- Hook structure correctness
+- Complete metadata (keywords, repository, license)
+- Security best practices
+
+**Guides**:
+- [Plugin Maintenance Guide](./docs/PLUGIN_MAINTENANCE_GUIDE.md) - Best practices and standards
+- [Plugin Debugging Guide](./docs/PLUGIN_DEBUGGING_GUIDE.md) - Troubleshooting and testing
+
 ## 🤝 Contributing
 
 Contributions are welcome! When adding new plugins:
@@ -129,7 +151,10 @@ Contributions are welcome! When adding new plugins:
 2. Include comprehensive README.md with usage examples
 3. Add plugin metadata in `.claude-plugin/plugin.json`
 4. Document all commands, agents, and skills
-5. Test across different platforms when possible
+5. Run `./Script/validate-all.sh` before committing
+6. Test across different platforms when possible
+
+The CI/CD pipeline will automatically validate your changes on pull requests.
 
 ## 💬 Community
 

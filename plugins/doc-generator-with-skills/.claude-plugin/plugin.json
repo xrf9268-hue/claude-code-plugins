@@ -5,5 +5,19 @@
   "author": {
     "name": "Claude Code Team",
     "email": "support@anthropic.com"
-  }
+  },
+  "keywords": [
+    "documentation",
+    "docs",
+    "skills",
+    "api-docs",
+    "changelog",
+    "generation",
+    "automation"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/xrf9268-hue/claude-code-plugins"
+  },
+  "license": "MIT"
 }

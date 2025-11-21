@@ -3,14 +3,22 @@
   "hooks": {
     "PreCompact": [
       {
-        "type": "command",
-        "command": "node ${CLAUDE_PLUGIN_ROOT}/hooks/pre-compact-handler.js"
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node ${CLAUDE_PLUGIN_ROOT}/hooks/pre-compact-handler.js"
+          }
+        ]
       }
     ],
     "SessionStart": [
       {
-        "type": "command",
-        "command": "bash ${CLAUDE_PLUGIN_ROOT}/hooks/session-start.sh"
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash ${CLAUDE_PLUGIN_ROOT}/hooks/session-start.sh"
+          }
+        ]
       }
     ]
   }

@@ -19,6 +19,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/Joe-oss9527/claude-code"
-  }
+    "url": "https://github.com/xrf9268-hue/claude-code-plugins"
+  },
+  "license": "MIT"
 }

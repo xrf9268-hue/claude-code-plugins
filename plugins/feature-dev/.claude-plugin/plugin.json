@@ -1,9 +1,23 @@
 {
   "name": "feature-dev",
-  "version": "1.0.0",
   "description": "Comprehensive feature development workflow with specialized agents for codebase exploration, architecture design, and quality review",
+  "version": "1.0.0",
   "author": {
     "name": "Sid Bidasaria",
     "email": "sbidasaria@anthropic.com"
-  }
+  },
+  "keywords": [
+    "feature-development",
+    "workflow",
+    "agents",
+    "architecture",
+    "design",
+    "code-quality",
+    "review"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/xrf9268-hue/claude-code-plugins"
+  },
+  "license": "MIT"
 }

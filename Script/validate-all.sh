@@ -16,12 +16,12 @@ WARNINGS=0
 
 error() {
   echo -e "${RED}✗ ERROR: $1${NC}" >&2
-  ((ERRORS++))
+  ((ERRORS++)) || true
 }
 
 warning() {
   echo -e "${YELLOW}⚠ WARNING: $1${NC}"
-  ((WARNINGS++))
+  ((WARNINGS++)) || true
 }
 
 success() {
@@ -63,7 +63,7 @@ for plugin_json in plugins/*/.claude-plugin/plugin.json; do
     continue
   fi
 
-  ((plugin_count++))
+  ((plugin_count++)) || true
   plugin_name=$(dirname $(dirname "$plugin_json"))
   plugin_name=$(basename "$plugin_name")
 
@@ -155,7 +155,7 @@ for hooks_json in plugins/*/hooks/hooks.json; do
     continue
   fi
 
-  ((hooks_count++))
+  ((hooks_count++)) || true
   plugin_name=$(dirname $(dirname "$hooks_json"))
   plugin_name=$(basename "$plugin_name")
 
@@ -255,7 +255,7 @@ for skill_md in plugins/*/skills/*/SKILL.md; do
     continue
   fi
 
-  ((skill_count++))
+  ((skill_count++)) || true
   skill_path=$(dirname "$skill_md")
   skill_name=$(basename "$skill_path")
   plugin_name=$(basename $(dirname $(dirname "$skill_path")))
@@ -298,8 +298,13 @@ for skill_md in plugins/*/skills/*/SKILL.md; do
   if ! echo "$frontmatter" | grep -q "^description:"; then
     error "$plugin_name/$skill_name: Missing required 'description' field in frontmatter"
   else
-    # Check description
-    desc=$(echo "$frontmatter" | sed -n '/^description:/,/^[a-z-]*:/p' | sed '1s/^description: *//;$d' | tr '\n' ' ')
+    # Check description - handle both single-line and multi-line descriptions
+    desc=$(echo "$frontmatter" | awk '/^description:/{flag=1; sub(/^description: */, ""); next} /^[a-z-]+:/{flag=0} flag' | tr '\n' ' ' | sed 's/  */ /g')
+    # If awk didn't find multi-line, try single-line
+    if [ -z "$desc" ]; then
+      desc=$(echo "$frontmatter" | grep "^description:" | sed 's/^description: *//')
+    fi
+    desc=$(echo "$desc" | xargs)  # Trim whitespace
     if [ -z "$desc" ]; then
       error "$plugin_name/$skill_name: 'description' field is empty"
     elif [ ${#desc} -gt 1024 ]; then
@@ -361,13 +366,13 @@ else
         # Check for version
         if ! jq -e ".plugins[$i].version" "$marketplace_json" > /dev/null 2>&1; then
           warning "marketplace.json: Entry '$entry_name' missing 'version' field"
-          ((inconsistent++))
+          ((inconsistent++)) || true
         fi
 
         # Check for author
         if ! jq -e ".plugins[$i].author" "$marketplace_json" > /dev/null 2>&1; then
           warning "marketplace.json: Entry '$entry_name' missing 'author' field"
-          ((inconsistent++))
+          ((inconsistent++)) || true
         fi
 
         # Check for source
@@ -401,10 +406,10 @@ non_executable=0
 
 for script in $(find plugins -path "*/hooks/*.sh" -o -path "*/hooks/*.py" -o -path "*/hooks-handlers/*.sh" 2>/dev/null); do
   if [ -f "$script" ]; then
-    ((script_count++))
+    ((script_count++)) || true
     if [ ! -x "$script" ]; then
       warning "Script not executable: $script"
-      ((non_executable++))
+      ((non_executable++)) || true
     fi
 
     # Check for shebang
@@ -459,7 +464,7 @@ else
   echo -e "${YELLOW}Warnings: $WARNINGS${NC}"
   echo ""
   echo "Please fix the errors above before proceeding."
-  echo "See IMPLEMENTATION_PLAN.md for guidance."
+  echo "See docs/PLUGIN_MAINTENANCE_GUIDE.md for guidance."
   echo ""
   exit 1
 fi

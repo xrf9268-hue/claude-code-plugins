@@ -5,6 +5,20 @@
   "author": {
     "name": "Boris Cherny",
     "email": "boris@anthropic.com"
-  }
+  },
+  "keywords": [
+    "code-review",
+    "pr",
+    "pull-request",
+    "quality",
+    "agents",
+    "review-automation",
+    "github",
+    "confidence-scoring"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/xrf9268-hue/claude-code-plugins"
+  },
+  "license": "MIT"
 }
-
