@@ -109,8 +109,8 @@ To modify the workflow:
 ### Related Documentation
 
 - [Plugin Maintenance Guide](../../docs/PLUGIN_MAINTENANCE_GUIDE.md)
-- [Implementation Plan](../../IMPLEMENTATION_PLAN.md)
-- [Improvement Changelog](../../docs/IMPROVEMENT_CHANGELOG.md)
+- [Plugin Debugging Guide](../../docs/PLUGIN_DEBUGGING_GUIDE.md)
+- [Quick Reference](../../docs/QUICK-REFERENCE.md)
 
 ### Support
 

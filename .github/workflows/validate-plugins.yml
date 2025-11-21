@@ -159,7 +159,7 @@ jobs:
             echo "" >> $GITHUB_STEP_SUMMARY
             echo "### Quick Links" >> $GITHUB_STEP_SUMMARY
             echo "- [Plugin Maintenance Guide](https://github.com/${{ github.repository }}/blob/main/docs/PLUGIN_MAINTENANCE_GUIDE.md)" >> $GITHUB_STEP_SUMMARY
-            echo "- [Implementation Plan](https://github.com/${{ github.repository }}/blob/main/IMPLEMENTATION_PLAN.md)" >> $GITHUB_STEP_SUMMARY
+            echo "- [Plugin Debugging Guide](https://github.com/${{ github.repository }}/blob/main/docs/PLUGIN_DEBUGGING_GUIDE.md)" >> $GITHUB_STEP_SUMMARY
           fi
 
   # Additional job to check for common issues

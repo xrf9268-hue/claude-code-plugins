@@ -157,8 +157,7 @@ Follow semantic versioning:
 
 ## Resources
 
-- [Review Report](../PLUGIN_SKILL_REVIEW_REPORT.md)
-- [Implementation Plan](../IMPLEMENTATION_PLAN.md)
+- [Plugin Debugging Guide](./PLUGIN_DEBUGGING_GUIDE.md)
 - [Quick Reference](./QUICK-REFERENCE.md)
 - [Official Claude Code Docs](https://code.claude.com/docs/en/plugins)
 

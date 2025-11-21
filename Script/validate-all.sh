@@ -464,7 +464,7 @@ else
   echo -e "${YELLOW}Warnings: $WARNINGS${NC}"
   echo ""
   echo "Please fix the errors above before proceeding."
-  echo "See IMPLEMENTATION_PLAN.md for guidance."
+  echo "See docs/PLUGIN_MAINTENANCE_GUIDE.md for guidance."
   echo ""
   exit 1
 fi

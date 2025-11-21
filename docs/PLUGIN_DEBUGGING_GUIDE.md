@@ -415,7 +415,6 @@ head -10 plugins/my-plugin/skills/my-skill/SKILL.md
 
 - [Official Debugging Docs](https://code.claude.com/docs/en/plugins-reference#debugging-and-development-tools)
 - [Plugin Maintenance Guide](./PLUGIN_MAINTENANCE_GUIDE.md)
-- [Implementation Plan](../IMPLEMENTATION_PLAN.md)
 - [Quick Reference](./QUICK-REFERENCE.md)
 
 ## Getting Help
