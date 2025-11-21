@@ -130,6 +130,7 @@ This repository maintains high quality standards through:
 - **Automated Validation**: GitHub Actions workflow validates all plugin configurations
 - **Pre-commit Hooks**: Optional git hooks prevent invalid commits (install with `./Script/install-git-hooks.sh`)
 - **Validation Scripts**: Run `./Script/validate-all.sh` to check your changes locally
+- **Debugging Tools**: Run `./Script/debug-plugins.sh` to test plugin functionality
 - **Documentation**: Comprehensive guides for plugin development and maintenance
 
 All plugins are validated for:
@@ -138,7 +139,9 @@ All plugins are validated for:
 - Complete metadata (keywords, repository, license)
 - Security best practices
 
-See [Plugin Maintenance Guide](./docs/PLUGIN_MAINTENANCE_GUIDE.md) for details.
+**Guides**:
+- [Plugin Maintenance Guide](./docs/PLUGIN_MAINTENANCE_GUIDE.md) - Best practices and standards
+- [Plugin Debugging Guide](./docs/PLUGIN_DEBUGGING_GUIDE.md) - Troubleshooting and testing
 
 ## 🤝 Contributing
 
