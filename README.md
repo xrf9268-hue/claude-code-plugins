@@ -18,9 +18,10 @@ Production-ready plugins that extend Claude Code with custom commands, specializ
 - **[code-review](./plugins/code-review/)** - Automated PR code reviews with confidence scoring
 - **[feature-dev](./plugins/feature-dev/)** - Structured 7-phase feature development workflow
 - **[security-guidance](./plugins/security-guidance/)** - Security best practices and vulnerability detection
-- **[doc-generator-with-skills](./plugins/doc-generator-with-skills/)** - Automated documentation generation using skills
 - **[plugin-developer-toolkit](./plugins/plugin-developer-toolkit/)** - Meta-plugin for building and managing plugins
 - **[context-preservation](./plugins/context-preservation/)** - Optimize context window with PreCompact hook
+- **[frontend-dev-guidelines](./plugins/frontend-dev-guidelines/)** - Comprehensive React/TypeScript frontend development guidelines
+- **[pr-review-toolkit](./plugins/pr-review-toolkit/)** - Specialized PR review agents for comprehensive code analysis
 
 ### 📚 Documentation
 
