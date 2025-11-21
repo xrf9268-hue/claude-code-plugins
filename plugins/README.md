@@ -17,18 +17,6 @@ Learn more in the [official plugins documentation](https://docs.claude.com/en/do
 
 ## Plugins in This Directory
 
-### [doc-generator-with-skills](./doc-generator-with-skills/)
-
-**Documentation Generator Plugin with Skills Integration**
-
-Demonstrates how to integrate Skills into Claude Code plugins. Provides automated documentation generation through model-invoked skills.
-
-- **Skills**:
-  - `api-docs-generator` - Generates comprehensive API documentation from code
-  - `changelog-generator` - Creates and maintains CHANGELOG.md following Keep a Changelog format
-- **Use case**: Reference example for plugin developers wanting to integrate skills; automatic documentation generation
-- **Note**: This is a reference example showing skills integration patterns
-
 ### [agent-sdk-dev](./agent-sdk-dev/)
 
 **Claude Agent SDK Development Plugin**
@@ -73,6 +61,55 @@ Provides a structured 7-phase approach to feature development with specialized a
   - `code-architect` - Designs feature architectures and implementation blueprints
   - `code-reviewer` - Reviews code for bugs, quality issues, and project conventions
 - **Use case**: Building new features with systematic codebase understanding and quality assurance
+
+### [security-guidance](./security-guidance/)
+
+**Security Best Practices Plugin**
+
+Proactive security warnings for common vulnerabilities in frontend and backend code using PreToolUse hooks.
+
+- **Hooks**: PreToolUse security validation
+- **Coverage**: 17 security rules covering XSS, command injection, unsafe patterns
+- **Use case**: Prevent security vulnerabilities before code is written
+
+### [context-preservation](./context-preservation/)
+
+**Context Preservation Plugin**
+
+Automatically preserves important development context before Claude compacts conversation history.
+
+- **Hooks**: PreCompact hook
+- **Features**: Saves architecture decisions, debugging insights, design rationales
+- **Use case**: Never lose critical context in long coding sessions
+
+### [frontend-dev-guidelines](./frontend-dev-guidelines/)
+
+**Frontend Development Guidelines Plugin**
+
+Comprehensive, modular skill for modern React/TypeScript frontend development.
+
+- **Skills**: Frontend development best practices
+- **Coverage**: React, TypeScript, performance, accessibility, testing, state management
+- **Use case**: Expert guidance on component design, optimization, and modern frameworks
+
+### [pr-review-toolkit](./pr-review-toolkit/)
+
+**PR Review Toolkit Plugin**
+
+Collection of specialized agents for thorough pull request review.
+
+- **Agents**: 6 specialized review agents (comment-analyzer, test-analyzer, silent-failure-hunter, type-design-analyzer, code-reviewer, code-simplifier)
+- **Use case**: Comprehensive PR analysis covering multiple quality dimensions
+
+### [plugin-developer-toolkit](./plugin-developer-toolkit/)
+
+**Plugin Developer Toolkit**
+
+Meta-plugin for creating, developing, and understanding Claude Code plugins.
+
+- **Features**: Interactive plugin creation, comprehensive documentation, ready-to-use templates
+- **Templates**: 4 battle-tested templates (basic, with-skill, with-hooks, complete)
+- **Use case**: Learning and developing Claude Code plugins
 
 ## Installation
 
@@ -121,7 +158,7 @@ plugin-name/
   - Require explicit user action
   - Best for: Specific workflows and operations
 
-See [doc-generator-with-skills](./doc-generator-with-skills/) for a complete skills integration example.
+See the [plugin-developer-toolkit](./plugin-developer-toolkit/) for comprehensive examples and templates.
 
 ## Contributing
 
