@@ -5,5 +5,19 @@
   "author": {
     "name": "Sid Bidasaria",
     "email": "sbidasaria@anthropic.com"
-  }
+  },
+  "keywords": [
+    "feature-development",
+    "workflow",
+    "agents",
+    "architecture",
+    "design",
+    "code-quality",
+    "review"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Joe-oss9527/claude-code"
+  },
+  "license": "MIT"
 }

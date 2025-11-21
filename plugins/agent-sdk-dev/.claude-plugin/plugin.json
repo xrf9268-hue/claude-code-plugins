@@ -5,5 +5,19 @@
   "author": {
     "name": "Ashwin Bhat",
     "email": "ashwin@anthropic.com"
-  }
+  },
+  "keywords": [
+    "agent-sdk",
+    "sdk-development",
+    "agents",
+    "api",
+    "development-tools",
+    "framework",
+    "anthropic"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Joe-oss9527/claude-code"
+  },
+  "license": "MIT"
 }

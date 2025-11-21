@@ -5,5 +5,19 @@
   "author": {
     "name": "Boris Cherny",
     "email": "boris@anthropic.com"
-  }
+  },
+  "keywords": [
+    "learning",
+    "interactive",
+    "education",
+    "output-style",
+    "teaching",
+    "code-contribution",
+    "hooks"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Joe-oss9527/claude-code"
+  },
+  "license": "MIT"
 }
