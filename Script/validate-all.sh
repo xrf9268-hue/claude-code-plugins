@@ -366,13 +366,13 @@ else
         # Check for version
         if ! jq -e ".plugins[$i].version" "$marketplace_json" > /dev/null 2>&1; then
           warning "marketplace.json: Entry '$entry_name' missing 'version' field"
-          ((inconsistent++))
+          ((inconsistent++)) || true
         fi
 
         # Check for author
         if ! jq -e ".plugins[$i].author" "$marketplace_json" > /dev/null 2>&1; then
           warning "marketplace.json: Entry '$entry_name' missing 'author' field"
-          ((inconsistent++))
+          ((inconsistent++)) || true
         fi
 
         # Check for source
