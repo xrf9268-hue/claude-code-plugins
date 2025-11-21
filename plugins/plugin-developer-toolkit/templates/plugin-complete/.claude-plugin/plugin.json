@@ -10,5 +10,10 @@
     "complete",
     "full-featured",
     "example"
-  ]
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/your-repo"
+  },
+  "license": "MIT"
 }
