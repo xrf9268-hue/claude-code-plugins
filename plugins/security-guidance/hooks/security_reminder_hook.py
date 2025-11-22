@@ -1,7 +1,16 @@
 #!/usr/bin/env python3
 """
 Security Reminder Hook for Claude Code
+
 This hook checks for security patterns in file edits and warns about potential vulnerabilities.
+
+Exit codes (for PreToolUse hooks):
+    0 = Allow operation to proceed (no security issues detected or hook error)
+    2 = Block operation (security issue detected, warning sent to Claude)
+
+Note: This hook uses exit code 2 to block file operations when security patterns
+are detected. Exit code 0 is used both for safe operations and hook errors
+(fail-safe behavior to avoid blocking Claude Code on hook failures).
 """
 
 import json
@@ -528,7 +537,8 @@ def main():
         input_data = json.loads(raw_input)
     except json.JSONDecodeError as e:
         debug_log(f"JSON decode error: {e}")
-        sys.exit(0)  # Allow tool to proceed if we can't parse input
+        # Exit code 0: Allow tool to proceed if we can't parse input (fail-safe)
+        sys.exit(0)
 
     # Extract session ID and tool information from the hook input
     session_id = input_data.get("session_id", "default")
@@ -537,12 +547,14 @@ def main():
 
     # Check if this is a relevant tool
     if tool_name not in ["Edit", "Write", "MultiEdit"]:
-        sys.exit(0)  # Allow non-file tools to proceed
+        # Exit code 0: Allow non-file tools to proceed
+        sys.exit(0)
 
     # Extract file path from tool_input
     file_path = tool_input.get("file_path", "")
     if not file_path:
-        sys.exit(0)  # Allow if no file path
+        # Exit code 0: Allow if no file path
+        sys.exit(0)
 
     # Extract content to check
     content = extract_content_from_input(tool_name, tool_input)
@@ -565,9 +577,10 @@ def main():
 
             # Output the warning to stderr and block execution
             print(reminder, file=sys.stderr)
-            sys.exit(2)  # Block tool execution (exit code 2 for PreToolUse hooks)
+            # Exit code 2: Block tool execution (sends warning to Claude)
+            sys.exit(2)
 
-    # Allow tool to proceed
+    # Exit code 0: Allow tool to proceed (no security issues detected)
     sys.exit(0)
 
 

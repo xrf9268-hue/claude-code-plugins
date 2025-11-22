@@ -1,8 +1,25 @@
 #!/bin/bash
 # SessionStart hook - Check for preserved context from previous sessions
+#
+# Exit codes:
+#   0 = Success, hook completed normally (non-blocking)
 
 CONTEXT_DIR=".claude/session-context"
 SUMMARY_FILE="$CONTEXT_DIR/summary.json"
+
+# Check if jq is installed
+if ! command -v jq &> /dev/null; then
+  # jq not found - exit gracefully without blocking
+  cat << EOF
+{
+  "hookSpecificOutput": {
+    "hookEventName": "SessionStart",
+    "additionalContext": "Context Preservation: Active (jq not installed, install with 'brew install jq' or 'apt-get install jq')"
+  }
+}
+EOF
+  exit 0
+fi
 
 # Check if we have preserved context
 if [ -f "$SUMMARY_FILE" ]; then
