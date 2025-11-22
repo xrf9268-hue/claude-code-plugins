@@ -8,7 +8,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
-- Comprehensive codebase review report against official Claude Code best practices
 - CHANGELOG.md for tracking version history
 - SECURITY.md for vulnerability reporting process
 - CONTRIBUTING.md for contribution guidelines
