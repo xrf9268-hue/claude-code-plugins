@@ -10,6 +10,12 @@
  * - Performance optimizations
  * - Debugging insights
  * - Tradeoff discussions
+ *
+ * Exit codes:
+ *   0 = Success (always non-blocking, even on errors)
+ *
+ * Note: This hook always exits with code 0 to ensure conversation
+ * compaction is never blocked, even if context preservation fails.
  */
 
 const fs = require('fs');
@@ -27,7 +33,8 @@ process.stdin.on('end', () => {
     preserveContext(input);
   } catch (error) {
     console.error('Error processing input:', error.message);
-    process.exit(0); // Don't block compaction on error
+    // Exit code 0: Don't block compaction on error
+    process.exit(0);
   }
 });
 
@@ -40,6 +47,7 @@ function preserveContext(input) {
 
   if (messages.length === 0) {
     console.error('No messages to preserve');
+    // Exit code 0: Success, nothing to preserve (non-blocking)
     process.exit(0);
   }
 
@@ -48,6 +56,7 @@ function preserveContext(input) {
 
   if (importantContext.length === 0) {
     console.error('No important context found');
+    // Exit code 0: Success, no important context to preserve (non-blocking)
     process.exit(0);
   }
 
@@ -58,6 +67,7 @@ function preserveContext(input) {
     console.error(`✓ Preserved ${importantContext.length} important context items`);
   }
 
+  // Exit code 0: Success, context preserved (non-blocking)
   process.exit(0);
 }
 
